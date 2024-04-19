@@ -9,7 +9,7 @@ export default function SideNewsItem() {
         <div className="row-span-4 border-2 border-muted-foreground w-0 mx-auto -mt-3"></div>
       </div>
       <div className="bg-white pt-5 space-y-3">
-        <p className="text-blue-500 font-semibold text-sm">April 19th, 2024</p>
+        <p className="text-[#5A91E8] font-semibold text-sm">April 19th, 2024</p>
         <h2 className="text-xl font-semibold">Industrial Report</h2>
         <p>
           Index of Industrial Production (IIP) grew by 3.8% YoY in December, as

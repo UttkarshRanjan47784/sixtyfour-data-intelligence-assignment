@@ -33,17 +33,17 @@ export default function NewsCarousel() {
   };
 
   return (
-    <div className="w-full bg-white shadow-md py-3 rounded-lg">
+    <div className="w-full bg-white shadow-md pb-3 rounded-lg">
       <div className="flex gap-3">
         <button
-          className="flex justify-center items-center cursor-pointer"
+          className="flex justify-center items-center cursor-pointer hover:bg-slate-200/50 rounded-tl-md"
           onClick={handlePrev}
         >
           <ChevronLeft />
         </button>
         <Cards offset={4 * (curPage - 1)} />
         <button
-          className="flex justify-center items-center cursor-pointer"
+          className="flex justify-center items-center cursor-pointer hover:bg-slate-200/50 rounded-tr-md"
           onClick={handleNext}
         >
           <ChevronRight />

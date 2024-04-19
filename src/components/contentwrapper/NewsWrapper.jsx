@@ -4,7 +4,7 @@ import RecentReleases from "../newswrapper/RecentReleases";
 
 export default function NewsWrapper() {
   return (
-    <div className="flex mt-3 px-10 space-x-5">
+    <div className="flex mt-3 px-10 space-x-5 h-fit">
       <div className="basis-3/4">
         <NewsCarousel />
       </div>

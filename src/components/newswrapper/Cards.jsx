@@ -21,6 +21,8 @@ export default function Cards(props) {
   });
 
   return (
-    <div className="w-full text-center flex justify-between">{renderCards}</div>
+    <div className="w-full text-center flex justify-between pt-3">
+      {renderCards}
+    </div>
   );
 }

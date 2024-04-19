@@ -4,7 +4,7 @@ const news = [
   {
     imgurl: pic,
     headline: `Lorem ipsum dolor sit amet 1`,
-    body: `Lorem ipsum dolor sit amet`,
+    body: `The market capitalisation of Indian stocks crossed US$4.5 trillion in January`,
   },
   {
     imgurl: pic,
