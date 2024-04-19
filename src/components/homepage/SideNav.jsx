@@ -8,9 +8,18 @@ import {
   Search,
   Settings,
 } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogClose,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function SideNav() {
   const navigate = useNavigate();
@@ -82,8 +91,26 @@ export default function SideNav() {
           onClick={handleClick}
         />
       </div>
-      <div>
-        <Settings className="mx-auto hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground" />
+      <div className="text-center">
+        <Dialog>
+          <DialogTrigger>
+            <Settings className="hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground" />
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Settings</DialogTitle>
+              <DialogDescription>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );

@@ -8,9 +8,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { DateTime } from "luxon";
 
 import notifications from "../helpers/notifications";
 import { ScrollArea } from "../ui/scroll-area";
+import Time from "./Time";
 
 export default function UserHeader() {
   const renderNotifications = notifications.map((item, index) => {
@@ -34,9 +36,9 @@ export default function UserHeader() {
       </div>
       <div className="flex gap-3 items-center">
         <Calendar />
-        <p>Today, 19 April</p>
+        <p>{DateTime.now().toFormat("dd, MMM")}</p>
         <Clock4 />
-        <p>13:32</p>
+        <Time />
         <div className="flex ml-16 gap-3 items-center">
           <Sheet>
             <SheetTrigger>
