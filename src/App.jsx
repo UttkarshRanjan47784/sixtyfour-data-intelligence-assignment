@@ -1,15 +1,13 @@
-import React from 'react'
-import { Button } from './components/ui/button'
-import { ThemeProvider } from './components/theme-provider'
-import { ModeToggle } from './components/mode-toggler'
+import React from "react";
+import { ThemeProvider } from "./components/theme-provider";
+import HomePage from "./pages/HomePage";
 
 export default function App() {
   return (
-    <ThemeProvider >
-      <div className='mx-5'>
-        <Button>Click Me!</Button>
-        <ModeToggle />
+    <ThemeProvider>
+      <div className="">
+        <HomePage />
       </div>
     </ThemeProvider>
-  )
+  );
 }
