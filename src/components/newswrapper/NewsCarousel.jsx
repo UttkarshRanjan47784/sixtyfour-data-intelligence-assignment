@@ -27,28 +27,35 @@ export default function NewsCarousel() {
     });
   };
 
+  const handleMore = (event) => {
+    event.preventDefault();
+    alert(`F`);
+  };
+
   return (
     <div className="w-full bg-white shadow-md py-3 rounded-lg">
-      <div className="flex">
-        <div
+      <div className="flex gap-3">
+        <button
           className="flex justify-center items-center cursor-pointer"
           onClick={handlePrev}
         >
           <ChevronLeft />
-        </div>
+        </button>
         <Cards offset={4 * (curPage - 1)} />
-        <div
+        <button
           className="flex justify-center items-center cursor-pointer"
           onClick={handleNext}
         >
           <ChevronRight />
-        </div>
+        </button>
       </div>
       <div className="flex justify-center items-center space-x-1">
         {renderDots}
       </div>
       <div className="flex justify-center items-center ">
-        <Button>View More</Button>
+        <Button onClick={handleMore}>
+          <p className="text-xs">View More</p>
+        </Button>
       </div>
     </div>
   );

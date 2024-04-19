@@ -1,13 +1,14 @@
 import React from "react";
 import NewsCarousel from "../newswrapper/NewsCarousel";
+import RecentReleases from "../newswrapper/RecentReleases";
 
 export default function NewsWrapper() {
   return (
-    <div className="flex mt-3 px-10">
-      <div className="basis-2/3 col-span-3">
+    <div className="flex mt-3 px-10 space-x-5">
+      <div className="basis-3/4">
         <NewsCarousel />
       </div>
-      <div className="basis-1/3 col-span-1"></div>
+      <RecentReleases />
     </div>
   );
 }
