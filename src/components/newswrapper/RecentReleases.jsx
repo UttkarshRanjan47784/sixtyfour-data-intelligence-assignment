@@ -16,9 +16,12 @@ export default function RecentReleases() {
       <div className="flex items-center justify-between">
         <h2 className="text-[#5A91E8] font-semibold">Recent Releases</h2>
         <DropdownMenu>
-          <DropdownMenuTrigger>
-            <Button variant="outline" className="w-fit">
-              India{" "}
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="outline"
+              className="w-fit flex items-center justify-between"
+            >
+              <span>India</span>
               <span className="ml-5">
                 <ChevronDown className="size-5" />
               </span>

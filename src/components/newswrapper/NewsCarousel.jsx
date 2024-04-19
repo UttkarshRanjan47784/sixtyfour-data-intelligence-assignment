@@ -10,8 +10,13 @@ export default function NewsCarousel() {
 
   const renderDots = [...Array(totalPages)].map((item, index) => {
     if (index != curPage - 1)
-      return <Dot className="text-muted-foreground size-8" />;
-    return <Dot className="size-12" />;
+      return (
+        <Dot
+          className="text-muted-foreground size-8"
+          key={`Dot${index}${Math.random()}`}
+        />
+      );
+    return <Dot className="size-12" key={`Dot${index}${Math.random()}`} />;
   });
 
   const handlePrev = () => {

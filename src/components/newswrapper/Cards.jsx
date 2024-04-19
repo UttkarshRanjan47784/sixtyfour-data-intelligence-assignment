@@ -5,7 +5,10 @@ export default function Cards(props) {
   const renderCards = news.map((item, index) => {
     if (index >= props.offset && index < props.offset + 4)
       return (
-        <div className="h-72 w-56 shadow-md">
+        <div
+          className="h-72 w-56 shadow-md"
+          key={`News${index}${Math.random()}`}
+        >
           <img src={item.imgurl} className="h-1/2 w-full" />
           <div className="px-5">
             <h3 className="text-sm font-semibold mt-2 text-left">
