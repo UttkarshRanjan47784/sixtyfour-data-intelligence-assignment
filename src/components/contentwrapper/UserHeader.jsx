@@ -51,8 +51,7 @@ export default function UserHeader() {
           {DateTime.now().toFormat("dd, MMMM")}
         </p>
         <Clock4 className="hidden sm:block" />
-        {/* <Time /> */}
-        <p>16:28</p>
+        <Time />
         <div className="flex sm:ml-12 gap-3 items-center">
           <Sheet>
             <SheetTrigger>
