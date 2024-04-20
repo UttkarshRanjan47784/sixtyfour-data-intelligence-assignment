@@ -38,7 +38,7 @@ export default function UserHeader() {
         <Calendar />
         <p>{DateTime.now().toFormat("dd, MMM")}</p>
         <Clock4 />
-        {/* <Time /> */}
+        <Time />
         <div className="flex ml-16 gap-3 items-center">
           <Sheet>
             <SheetTrigger>
