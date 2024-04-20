@@ -1,4 +1,4 @@
-import { Bell, Calendar, Clock4 } from "lucide-react";
+import { Bell, Calendar, Clock4, Menu } from "lucide-react";
 import React from "react";
 import {
   Sheet,
@@ -12,6 +12,7 @@ import { DateTime } from "luxon";
 
 import notifications from "../helpers/notifications";
 import { ScrollArea } from "../ui/scroll-area";
+import HamMenu from "./HamMenu";
 import Time from "./Time";
 
 export default function UserHeader() {
@@ -19,27 +20,40 @@ export default function UserHeader() {
     return (
       <div
         key={`Notification${index}${Math.random()}`}
-        className="p-5 w-11/12 border-2 border-muted-foreground shadow-md rounded-lg my-5 mx-auto hover:scale-105 cursor-pointer transition-all duration-300"
+        className="block p-5 w-11/12 border-2 border-muted-foreground shadow-md rounded-lg my-5 mx-auto hover:scale-105 cursor-pointer transition-all duration-300 text-sm text-muted-foreground"
       >
-        <p>{item}</p>
+        {item}
       </div>
     );
   });
 
   return (
-    <div className="w-full text-white px-10 py-5 flex items-center justify-between">
-      <div>
-        <p className="text-lg font-semibold">Good Afternoon, Uttkarsh</p>
-        <p className="text-xs text-muted-foreground">
-          You are subscribed to Retail Plan
-        </p>
+    <div className="w-full text-white px-3 sm:px-5 md:px-10 py-5 flex items-center justify-between">
+      <div className="flex justify-center items-center space-x-5">
+        <HamMenu />
+        <div>
+          <p className="text-lg font-semibold">
+            <span className="hidden sm:inline-block">Good Afternoon, </span>
+            <span className="sm:hidden">Hi </span>
+            <span>Uttkarsh</span>
+          </p>
+          <p className="text-xs text-muted-foreground">
+            <span className="hidden sm:inline-block">
+              You are subscribed to {` `}
+            </span>{" "}
+            <span>Retail Plan</span>
+          </p>
+        </div>
       </div>
       <div className="flex gap-3 items-center">
-        <Calendar />
-        <p>{DateTime.now().toFormat("dd, MMM")}</p>
-        <Clock4 />
-        <Time />
-        <div className="flex ml-16 gap-3 items-center">
+        <Calendar className="hidden sm:block" />
+        <p className="whitespace-nowrap">
+          {DateTime.now().toFormat("dd, MMMM")}
+        </p>
+        <Clock4 className="hidden sm:block" />
+        {/* <Time /> */}
+        <p>16:28</p>
+        <div className="flex sm:ml-12 gap-3 items-center">
           <Sheet>
             <SheetTrigger>
               <Bell className="cursor-pointer hover:scale-125 hover:text-muted-foreground transition-all duration-300" />
@@ -48,11 +62,9 @@ export default function UserHeader() {
               <SheetHeader>
                 <SheetTitle>Notifications</SheetTitle>
               </SheetHeader>
-              <SheetDescription>
-                <ScrollArea className="h-dvh flex flex-col items-center">
-                  {renderNotifications}
-                </ScrollArea>
-              </SheetDescription>
+              <ScrollArea className="h-dvh flex flex-col items-center">
+                {renderNotifications}
+              </ScrollArea>
             </SheetContent>
           </Sheet>
         </div>
