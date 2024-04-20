@@ -21,6 +21,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+import { Calendar } from "../ui/calendar";
+
 export default function SideNav() {
   const navigate = useNavigate();
   const handleClick = (event) => {
@@ -54,7 +56,7 @@ export default function SideNav() {
       <div>
         <img src={logo} className="size-full" />
       </div>
-      <div className="space-y-7 -translate-y-16">
+      <div className="space-y-7 -translate-y-16 text-center">
         <Search
           className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
           id="Search"
@@ -70,11 +72,23 @@ export default function SideNav() {
           id="CircleHelp"
           onClick={handleClick}
         />
-        <CalendarPlus
-          className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
-          id="CalendarPlus"
-          onClick={handleClick}
-        />
+        <Dialog>
+          <DialogTrigger>
+            <CalendarPlus
+              className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
+              id="CalendarPlus"
+            />
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <h1 className="text-center text-xl font-semibold">Calendar</h1>
+              <Calendar
+                mode="single"
+                className="rounded-md border flex justify-center items-center mt-10"
+              />
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
         <Building
           className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
           id="Building"
