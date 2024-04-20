@@ -4,9 +4,9 @@ import Cards from "./Cards";
 import { len } from "../helpers/news";
 import { Button } from "../ui/button";
 
-export default function NewsCarousel() {
+export default function NewsCarousel(props) {
   const [curPage, setCurPage] = useState(1);
-  const totalPages = Math.ceil(len / 4);
+  const totalPages = Math.ceil(len / props.perPage);
 
   const renderDots = [...Array(totalPages)].map((item, index) => {
     if (index != curPage - 1)
@@ -34,19 +34,19 @@ export default function NewsCarousel() {
 
   const handleMore = (event) => {
     event.preventDefault();
-    alert(`F`);
+    alert(`Thank you`);
   };
 
   return (
     <div className="w-full bg-white shadow-md pb-3 rounded-lg">
-      <div className="flex gap-3">
+      <div className="flex max-[360px]:justify-center max-[360px]:space-x-1">
         <button
           className="flex justify-center items-center cursor-pointer hover:bg-slate-200/50 rounded-tl-md"
           onClick={handlePrev}
         >
           <ChevronLeft />
         </button>
-        <Cards offset={4 * (curPage - 1)} />
+        <Cards offset={props.perPage * (curPage - 1)} perPage={props.perPage} />
         <button
           className="flex justify-center items-center cursor-pointer hover:bg-slate-200/50 rounded-tr-md"
           onClick={handleNext}
@@ -54,10 +54,14 @@ export default function NewsCarousel() {
           <ChevronRight />
         </button>
       </div>
-      <div className="flex justify-center items-center space-x-1">
-        {renderDots}
+      <div className="flex justify-center items-center lg:space-x-1">
+        {totalPages >= 20 ? null : renderDots}
       </div>
-      <div className="flex justify-center items-center ">
+      <div
+        className={`flex justify-center items-center ${
+          totalPages >= 20 ? `mt-5` : null
+        }`}
+      >
         <Button onClick={handleMore}>
           <p className="text-xs">View More</p>
         </Button>

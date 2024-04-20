@@ -12,8 +12,8 @@ import SideNewsItem from "./SideNewsItem";
 
 export default function RecentReleases() {
   return (
-    <ScrollArea className="basis-1/4 col-span-1 shadow-md bg-white p-5 rounded-lg h-[25rem] relative">
-      <div className="flex items-center justify-between">
+    <ScrollArea className="col-span-1 shadow-md bg-white p-5 rounded-lg h-[25rem]  relative ">
+      <div className="flex items-center justify-between flex-wrap">
         <h2 className="text-[#5A91E8] font-semibold">Recent Releases</h2>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

@@ -1,4 +1,3 @@
-import Background from "@/components/contentwrapper/Background";
 import ContentWrapper from "@/components/homepage/ContentWrapper";
 import SideNav from "@/components/homepage/SideNav";
 import React from "react";

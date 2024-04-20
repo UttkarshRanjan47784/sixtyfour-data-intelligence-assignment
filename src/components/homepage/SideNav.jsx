@@ -50,43 +50,43 @@ export default function SideNav() {
   };
 
   return (
-    <div className="w-[70px] h-dvh bg-background shadow-md flex flex-col justify-between pb-5">
+    <div className="w-[70px] h-dvh bg-background shadow-md hidden sm:flex flex-col justify-between pb-5">
       <div>
         <img src={logo} className="size-full" />
       </div>
       <div className="space-y-7 -translate-y-16">
         <Search
-          className="mx-auto hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
+          className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
           id="Search"
           onClick={handleClick}
         />
         <Monitor
-          className="mx-auto hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
+          className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
           id="Monitor"
           onClick={handleClick}
         />
         <CircleHelp
-          className="mx-auto hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
+          className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
           id="CircleHelp"
           onClick={handleClick}
         />
         <CalendarPlus
-          className="mx-auto hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
+          className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
           id="CalendarPlus"
           onClick={handleClick}
         />
         <Building
-          className="mx-auto hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
+          className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
           id="Building"
           onClick={handleClick}
         />
         <CircleDollarSign
-          className="mx-auto hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
+          className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
           id="CircleDollarSign"
           onClick={handleClick}
         />
         <Headphones
-          className="mx-auto hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
+          className="mx-auto hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
           id="Headphones"
           onClick={handleClick}
         />
@@ -94,7 +94,7 @@ export default function SideNav() {
       <div className="text-center">
         <Dialog>
           <DialogTrigger>
-            <Settings className="hover:scale-125 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground" />
+            <Settings className="hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground" />
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
