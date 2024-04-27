@@ -27,8 +27,37 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Calendar } from "../ui/calendar";
+import { useNavigate } from "react-router-dom";
 
 export default function HamMenu() {
+  const navigate = useNavigate();
+
+  const handleClick = (event) => {
+    switch (event.target.id) {
+      case "Search":
+        navigate(`/blank`);
+        break;
+      case "Monitor":
+        navigate(`/blank`);
+        break;
+      case "CircleHelp":
+        navigate(`/blank`);
+        break;
+      case "CalendarPlus":
+        navigate(`/blank`);
+        break;
+      case "Building":
+        navigate(`/blank`);
+        break;
+      case "CircleDollarSign":
+        navigate(`/blank`);
+        break;
+      case "Headphones":
+        navigate(`/blank`);
+        break;
+    }
+  };
+
   return (
     <Sheet>
       <SheetTrigger>
@@ -38,36 +67,36 @@ export default function HamMenu() {
         <SheetHeader>
           <SheetTitle className="mt-10">SixtyFour Data Intelligence</SheetTitle>
           <div className="py-16 space-y-5 grid gap-3 text-center">
-            <a
-              href="/blank"
+            <div
               className="flex w-44 mx-auto  justify-between  items-center hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
               id="Search"
+              onClick={handleClick}
             >
               <div>Search</div>
               <div>
                 <Search />
               </div>
-            </a>
-            <a
-              href="/blank"
+            </div>
+            <div
               className="flex w-44 mx-auto  justify-between items-center hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
               id="Monitor"
+              onClick={handleClick}
             >
               <div>View</div>
               <div>
                 <Monitor />
               </div>
-            </a>
-            <a
-              href="/blank"
+            </div>
+            <div
               className="flex w-44 mx-auto  justify-between  items-center hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
               id="CircleHelp"
+              onClick={handleClick}
             >
               <div>Help</div>
               <div>
                 <CircleHelp />
               </div>
-            </a>
+            </div>
 
             <Dialog>
               <DialogTrigger>
@@ -93,36 +122,36 @@ export default function HamMenu() {
                 </DialogHeader>
               </DialogContent>
             </Dialog>
-            <a
-              href="/blank"
+            <div
               className="flex w-44 mx-auto  justify-between  items-center hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
               id="Building"
+              onClick={handleClick}
             >
               <div>Data Centers</div>
               <div>
                 <Building />
               </div>
-            </a>
-            <a
-              href="/blank"
+            </div>
+            <div
               className="flex w-44 mx-auto  justify-between  items-center hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
               id="CircleDollarSign"
+              onClick={handleClick}
             >
               <div>Finance</div>
               <div>
                 <CircleDollarSign />
               </div>
-            </a>
-            <a
-              href="/blank"
+            </div>
+            <div
               className="flex w-44 mx-auto justify-between items-center hover:scale-105 hover:text-primary cursor-pointer transition-all duration-300  text-muted-foreground"
               id="Headphones"
+              onClick={handleClick}
             >
               <div>Audio</div>
               <div>
                 <Headphones />
               </div>
-            </a>
+            </div>
             <Dialog>
               <DialogTrigger>
                 <div
